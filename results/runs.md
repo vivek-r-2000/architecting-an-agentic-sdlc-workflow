@@ -8,16 +8,16 @@ This document records all trial runs, issue mappings, git commits, and review ve
 
 | Run ID | Target Issue | Condition | Retry Cycles | Baseline Tests | Hidden Tests | Tokens | Status |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| `E1-1-A` | Issue 1: Regex None crash | Variant A (Naive) | 2 | 228 / 228 | 1 / 3 | 14,200 | Regressed |
-| `E1-1-B` | Issue 1: Regex None crash | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 8,900 | **Verified** |
-| `E1-2-A` | Issue 2: Table.upsert doc_id | Variant A (Naive) | 3 | 228 / 228 | 2 / 3 | 18,500 | Aborted |
-| `E1-2-B` | Issue 2: Table.upsert doc_id | Variant B (Grounded) | 1 | 228 / 228 | 3 / 3 | 11,200 | **Verified** |
-| `E1-3-A` | Issue 3: Query.any/all lists | Variant A (Naive) | 2 | 228 / 228 | 2 / 3 | 16,100 | Incomplete |
-| `E1-3-B` | Issue 3: Query.any/all lists | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 10,400 | **Verified** |
-| `E1-4-A` | Issue 4: Query.between bounds | Variant A (Naive) | 3 | 228 / 228 | 1 / 3 | 19,400 | Aborted |
-| `E1-4-B` | Issue 4: Query.between bounds | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 9,800 | **Verified** |
-| `E1-5-A` | Issue 5: Vague Fast Lookups | Variant A (Naive) | 3 | 228 / 228 | 0 / 3 | 21,000 | Failed |
-| `E1-5-B` | Issue 5: Vague Fast Lookups | Variant B (Grounded) | 1 | 228 / 228 | 3 / 3 | 13,500 | **Verified** |
+| `E1-1-A` | [Issue #1](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/1): Regex None crash | Variant A (Naive) | 2 | 228 / 228 | 1 / 3 | 14,200 | Regressed |
+| `E1-1-B` | [Issue #1](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/1): Regex None crash | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 8,900 | **Verified** |
+| `E1-2-A` | [Issue #2](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/2): Table.upsert doc_id | Variant A (Naive) | 3 | 228 / 228 | 2 / 3 | 18,500 | Aborted |
+| `E1-2-B` | [Issue #2](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/2): Table.upsert doc_id | Variant B (Grounded) | 1 | 228 / 228 | 3 / 3 | 11,200 | **Verified** |
+| `E1-3-A` | [Issue #3](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/3): Query.any/all lists | Variant A (Naive) | 2 | 228 / 228 | 2 / 3 | 16,100 | Incomplete |
+| `E1-3-B` | [Issue #3](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/3): Query.any/all lists | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 10,400 | **Verified** |
+| `E1-4-A` | [Issue #4](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/4): Query.between bounds | Variant A (Naive) | 3 | 228 / 228 | 1 / 3 | 19,400 | Aborted |
+| `E1-4-B` | [Issue #4](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/4): Query.between bounds | Variant B (Grounded) | 0 | 228 / 228 | 3 / 3 | 9,800 | **Verified** |
+| `E1-5-A` | [Issue #5](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/5): Vague Fast Lookups | Variant A (Naive) | 3 | 228 / 228 | 0 / 3 | 21,000 | Failed |
+| `E1-5-B` | [Issue #5](https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/issues/5): Vague Fast Lookups | Variant B (Grounded) | 1 | 228 / 228 | 3 / 3 | 13,500 | **Verified** |
 
 ### Exp 1 Aggregate Findings:
 - **Variant B (Grounded)** achieved a **100% hidden test pass rate (15/15)** compared to only **40% (6/15)** for Variant A.
