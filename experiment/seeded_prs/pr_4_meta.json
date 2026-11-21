@@ -1,0 +1,9 @@
+{
+  "pr_id": 4,
+  "title": "fix(queries): update regex matching for null values",
+  "issue_ref": "issue_1_bug_regex_match_nonstring.md",
+  "expected_verdict": "REQUEST_CHANGES",
+  "category": "CODE_ISSUE",
+  "defect_type": "REGRESSION_ERROR",
+  "description": "Fixes regex handling but breaks Query hash caching and causes existing baseline test_queries.py test cases to fail."
+}

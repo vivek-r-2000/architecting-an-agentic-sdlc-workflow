@@ -1,0 +1,14 @@
+diff --git a/tinydb/queries.py b/tinydb/queries.py
+--- a/tinydb/queries.py
++++ b/tinydb/queries.py
+@@ -298,7 +298,9 @@ class Query:
+             flags = flags.value
+ 
+         return QueryInstance(
+-            lambda value: bool(regex.search(value)),
++            lambda value: bool(value is not None and re.search(regex, str(value))),
+-            ('regex', self._path, regex.pattern, flags)
++            None  # Regression: unhashable query instance breaks LRUCache caching in test_regex_flags_affect_hash_and_query_cache
+         )
+ 
+     def one_of(self, values: List[Any]) -> QueryInstance:

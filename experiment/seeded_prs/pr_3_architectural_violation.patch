@@ -1,0 +1,25 @@
+diff --git a/tinydb/queries.py b/tinydb/queries.py
+--- a/tinydb/queries.py
++++ b/tinydb/queries.py
+@@ -10,6 +10,7 @@ from typing import (
+     Tuple,
+     Union,
+ )
++from tinydb.table import Table
+ 
+ from .utils import freeze
+ 
+@@ -310,6 +311,14 @@ class Query:
+         """
+         return QueryInstance(lambda value: value in values, ('one_of', self._path, tuple(values)))
+ 
++    def between(self, low: Any, high: Any) -> QueryInstance:
++        # Architectural Violation: Coupling Query DSL with concrete Table logic
++        def test(value: Any) -> bool:
++            Table._last_evaluated_query = self
++            return low <= value <= high
++        return QueryInstance(test, ('between', self._path, freeze(low), freeze(high)))
++
+ 
+ class QueryInstance:
+     """

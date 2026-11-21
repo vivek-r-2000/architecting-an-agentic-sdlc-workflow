@@ -1,0 +1,27 @@
+diff --git a/tinydb/table.py b/tinydb/table.py
+--- a/tinydb/table.py
++++ b/tinydb/table.py
+@@ -105,6 +105,7 @@ class Table:
+         self._storage = storage
+         self._name = name
+         self._query_cache: LRUCache[QueryLike, List[Document]] = LRUCache(capacity=cache_size)
++        self._indexes: Dict[str, Dict[Any, List[int]]] = {}
+ 
+         self._next_id = None
+ 
+@@ -200,6 +201,16 @@ class Table:
+         """
+         return f'<Table name={self.name!r} total={len(self)}>'
+ 
++    def create_index(self, field: str) -> None:
++        """Build static index on a field (Bug: never updated or invalidated on mutations)."""
++        idx: Dict[Any, List[int]] = {}
++        for doc_id, doc in self._read_table().items():
++            if field in doc:
++                val = doc[field]
++                idx.setdefault(val, []).append(doc_id)
++        self._indexes[field] = idx
++
+     @property
+     def name(self) -> str:
+         """

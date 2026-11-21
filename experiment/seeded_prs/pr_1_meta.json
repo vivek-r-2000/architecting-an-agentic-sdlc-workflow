@@ -1,0 +1,8 @@
+{
+  "pr_id": 1,
+  "title": "feat(queries): add Query.between(low, high) with defensive type checks",
+  "issue_ref": "issue_4_feature_query_between.md",
+  "expected_verdict": "APPROVE",
+  "defect_type": "NONE",
+  "description": "Clean, complete implementation of Query.between with defensive exception catching and deterministic hash caching."
+}

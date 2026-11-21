@@ -1,0 +1,25 @@
+diff --git a/tinydb/queries.py b/tinydb/queries.py
+--- a/tinydb/queries.py
++++ b/tinydb/queries.py
+@@ -310,6 +310,21 @@ class Query:
+         """
+         return QueryInstance(lambda value: value in values, ('one_of', self._path, tuple(values)))
+ 
++    def between(self, low: Any, high: Any) -> QueryInstance:
++        """
++        Check if a field value is between low and high (inclusive).
++        Gracefully handles missing fields, None, and incomparable types.
++        """
++        def test(value: Any) -> bool:
++            try:
++                return low <= value <= high
++            except (TypeError, AttributeError):
++                return False
++
++        return QueryInstance(
++            test,
++            ('between', self._path, freeze(low), freeze(high))
++        )
+ 
+ class QueryInstance:
+     """

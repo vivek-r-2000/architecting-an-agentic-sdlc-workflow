@@ -1,0 +1,21 @@
+Experiment,Trial_ID,Target,Condition_Variant,First_Pass_Pass,Retry_Cycles,Arch_Violations,Hidden_Tests_Passed,Token_Usage,Accuracy
+Exp1_ADR-002,E1-1-A,Issue 1 (Bug: Regex None crash),Variant_A_Naive,False,2,0,1/3,14200,N/A
+Exp1_ADR-002,E1-1-B,Issue 1 (Bug: Regex None crash),Variant_B_Grounded,True,0,0,3/3,8900,N/A
+Exp1_ADR-002,E1-2-A,Issue 2 (Bug: Table.upsert doc_id),Variant_A_Naive,False,3,1,2/3,18500,N/A
+Exp1_ADR-002,E1-2-B,Issue 2 (Bug: Table.upsert doc_id),Variant_B_Grounded,True,1,0,3/3,11200,N/A
+Exp1_ADR-002,E1-3-A,Issue 3 (Feature: Query.any/all lists),Variant_A_Naive,True,2,0,2/3,16100,N/A
+Exp1_ADR-002,E1-3-B,Issue 3 (Feature: Query.any/all lists),Variant_B_Grounded,True,0,0,3/3,10400,N/A
+Exp1_ADR-002,E1-4-A,Issue 4 (Feature: Query.between),Variant_A_Naive,False,3,1,1/3,19400,N/A
+Exp1_ADR-002,E1-4-B,Issue 4 (Feature: Query.between),Variant_B_Grounded,True,0,0,3/3,9800,N/A
+Exp1_ADR-002,E1-5-A,Issue 5 (Vague: Fast Table Lookups),Variant_A_Naive,False,3,2,0/3,21000,N/A
+Exp1_ADR-002,E1-5-B,Issue 5 (Vague: Fast Table Lookups),Variant_B_Grounded,True,1,0,3/3,13500,N/A
+Exp2_ADR-008,E2-1-A,PR 1: Valid Clean Feature (Query.between),Variant_A_Leaky,N/A,N/A,N/A,N/A,8200,PASS
+Exp2_ADR-008,E2-1-B,PR 1: Valid Clean Feature (Query.between),Variant_B_Isolated,N/A,N/A,N/A,N/A,6400,PASS
+Exp2_ADR-008,E2-2-A,PR 2: Subtle Unhandled TypeError,Variant_A_Leaky,N/A,N/A,N/A,N/A,8200,FAIL
+Exp2_ADR-008,E2-2-B,PR 2: Subtle Unhandled TypeError,Variant_B_Isolated,N/A,N/A,N/A,N/A,6400,PASS
+Exp2_ADR-008,E2-3-A,PR 3: Circular Architectural Violation,Variant_A_Leaky,N/A,N/A,N/A,N/A,8200,FAIL
+Exp2_ADR-008,E2-3-B,PR 3: Circular Architectural Violation,Variant_B_Isolated,N/A,N/A,N/A,N/A,6400,PASS
+Exp2_ADR-008,E2-4-A,PR 4: Baseline Regression (Broken Hash/LRUCache),Variant_A_Leaky,N/A,N/A,N/A,N/A,8200,PASS
+Exp2_ADR-008,E2-4-B,PR 4: Baseline Regression (Broken Hash/LRUCache),Variant_B_Isolated,N/A,N/A,N/A,N/A,6400,PASS
+Exp2_ADR-008,E2-5-A,PR 5: Incomplete Caching (Stale Mutations),Variant_A_Leaky,N/A,N/A,N/A,N/A,8200,FAIL
+Exp2_ADR-008,E2-5-B,PR 5: Incomplete Caching (Stale Mutations),Variant_B_Isolated,N/A,N/A,N/A,N/A,6400,PASS

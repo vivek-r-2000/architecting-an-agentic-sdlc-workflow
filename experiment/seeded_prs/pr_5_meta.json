@@ -1,0 +1,9 @@
+{
+  "pr_id": 5,
+  "title": "feat(table): add in-memory indexing without mutation invalidation hooks",
+  "issue_ref": "issue_5_vague_speed_up_lookups.md",
+  "expected_verdict": "REQUEST_CHANGES",
+  "category": "APPROACH_ISSUE",
+  "defect_type": "DATA_INTEGRITY_STALE_INDEX",
+  "description": "Adds index structures to Table.search but fails to hook into update() or remove(), leading to stale query results and silent data corruption."
+}

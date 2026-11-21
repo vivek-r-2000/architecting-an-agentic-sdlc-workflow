@@ -1,0 +1,74 @@
+name: AutoSE Agentic SDLC Pipeline
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: autose-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  sdlc-pipeline:
+    # Run only when labeled 'autose' or commented with '/autose'
+    if: >-
+      (github.event_name == 'issues' && github.event.label.name == 'autose') ||
+      (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/autose') && !github.event.issue.pull_request)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.12 & uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          uv sync --all-extras
+
+      - name: Configure Git Author
+        run: |
+          git config user.name "autose-bot[bot]"
+          git config user.email "autose-bot[bot]@users.noreply.github.com"
+
+      - name: Prepare Issue Payload
+        run: |
+          mkdir -p .autose
+          cat << 'EOF' > .autose/current_issue.md
+          # ${{ github.event.issue.title }}
+          ${{ github.event.issue.body }}
+          EOF
+
+      - name: Run AutoSE State-Machine Orchestrator
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYTHONPATH: ${{ github.workspace }}/workflow
+        run: |
+          uv run python -m autose_workflow.orchestrator \
+            --issue-id ${{ github.event.issue.number }} \
+            --issue-file .autose/current_issue.md \
+            --push
+
+      - name: Upload SDLC Stage Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autose-run-${{ github.run_id }}-issue-${{ github.event.issue.number }}
+          path: .autose/
+          retention-days: 14

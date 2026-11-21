@@ -1,0 +1,9 @@
+{
+  "pr_id": 3,
+  "title": "refactor(queries): link Table instance directly into Query evaluation",
+  "issue_ref": "issue_4_feature_query_between.md",
+  "expected_verdict": "REQUEST_CHANGES",
+  "category": "APPROACH_ISSUE",
+  "defect_type": "ARCHITECTURAL_VIOLATION",
+  "description": "Imports Table into tinydb/queries.py, violating Architectural Constraint 1 (No Circular Dependencies in Query DSL; queries must remain pure decoupled functional closures)."
+}

@@ -1,0 +1,16 @@
+diff --git a/tinydb/queries.py b/tinydb/queries.py
+--- a/tinydb/queries.py
++++ b/tinydb/queries.py
+@@ -310,6 +310,13 @@ class Query:
+         """
+         return QueryInstance(lambda value: value in values, ('one_of', self._path, tuple(values)))
+ 
++    def between(self, low: Any, high: Any) -> QueryInstance:
++        """
++        Check if a field value is between low and high (inclusive).
++        """
++        # Bug: unhandled TypeError when document value cannot be compared with low or high
++        return QueryInstance(lambda value: low <= value <= high, ('between', self._path, freeze(low), freeze(high)))
+ 
+ class QueryInstance:
+     """

@@ -1,0 +1,9 @@
+{
+  "pr_id": 2,
+  "title": "feat(queries): add Query.between predicate method",
+  "issue_ref": "issue_4_feature_query_between.md",
+  "expected_verdict": "REQUEST_CHANGES",
+  "category": "CODE_ISSUE",
+  "defect_type": "UNHANDLED_EXCEPTION",
+  "description": "Implements Query.between but naively evaluates low <= value <= high without try-except guard, causing unhandled TypeError on mixed types or None values."
+}
