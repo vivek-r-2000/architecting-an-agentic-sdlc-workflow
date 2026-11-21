@@ -31,7 +31,7 @@ def execute_stage_5(
         text=True
     )
 
-    pr_url = f"https://github.com/vivek-r-2000/2019112020_AutoSE_A3/pull/{issue_number + 1}"
+    pr_url = f"https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow/pull/{issue_number + 1}"
     pr_status = "STAGED_LOCAL_ONLY"
 
     # Push and create PR only if push_to_remote flag is explicitly passed

@@ -3,7 +3,7 @@
 **Author:** Vivek R (Roll Number: `2019112020`)  
 **Course:** CS6.403 Autonomous Software Engineering (Monsoon 2026), IIIT Hyderabad  
 **Instructor:** Prof. Karthik Vaidhyanathan  
-**Repository URL:** `https://github.com/vivek-r-2000/2019112020_AutoSE_A3`  
+**Repository URL:** `https://github.com/vivek-r-2000/architecting-an-agentic-sdlc-workflow`  
 **Base Repository:** [msiemens/tinydb](https://github.com/msiemens/tinydb) pinned at commit [`edff96aeb2616402e9489d46e90a592c05565621`](https://github.com/msiemens/tinydb/tree/edff96aeb2616402e9489d46e90a592c05565621)  
 **Baseline Test Suite:** 228 passed in 2.88s  
 
