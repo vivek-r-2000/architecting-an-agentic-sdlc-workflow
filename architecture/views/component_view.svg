@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 880" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.06"/>
     </filter>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569"/>
@@ -12,130 +12,337 @@
     <marker id="arrow-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d97706"/>
     </marker>
+    <marker id="arrow-success" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a"/>
+    </marker>
   </defs>
 
-  <!-- Title & Metadata -->
-  <text x="40" y="45" font-size="22" font-weight="700" fill="#0f172a">AutoSE SDLC Workflow: Component Architecture View</text>
-  <text x="40" y="70" font-size="13" fill="#64748b">Decoupled 6-Stage Agentic Pipeline with Sandboxed Independent Reviewer</text>
+  <!-- ==================== HEADER ==================== -->
+  <text x="40" y="42" font-size="20" font-weight="700" fill="#0f172a">AutoSE SDLC Workflow: Component Architecture View</text>
+  <text x="40" y="64" font-size="12" fill="#64748b">Decoupled 6-Stage Agentic Pipeline · Sandboxed Adversarial Reviewer · Sovereign Human Governance</text>
 
-  <!-- External Environment Boundary -->
-  <rect x="40" y="95" width="1020" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-  <text x="60" y="120" font-size="12" font-weight="600" fill="#64748b" text-transform="uppercase" letter-spacing="0.5">External Trigger &amp; GitHub Platform Environment</text>
+  <!-- Metadata Badges -->
+  <rect x="770" y="30" width="135" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="785" cy="43" r="4" fill="#0284c7"/>
+  <text x="837" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">TinyDB edff96a</text>
+
+  <rect x="915" y="30" width="145" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="930" cy="43" r="4" fill="#16a34a"/>
+  <text x="992" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">10 Nygard ADRs</text>
+
+  <rect x="1070" y="30" width="130" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <circle cx="1085" cy="43" r="4" fill="#2563eb"/>
+  <text x="1140" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="#1d4ed8">Gemini 3.5 / 3.8</text>
+
+  <!-- ==================== ROW 1: EXTERNAL ENVIRONMENT & TRIGGERS ==================== -->
+  <rect x="40" y="82" width="1160" height="72" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+  <text x="56" y="99" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.6">EXTERNAL ENVIRONMENT &amp; GITHUB PLATFORM TRIGGERS</text>
+
+  <!-- Trigger Card 1: Issue Labeled -->
+  <rect x="56" y="106" width="360" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+  <circle cx="74" cy="124" r="4.5" fill="#2563eb"/>
+  <text x="88" y="128" font-size="12" font-weight="600" fill="#1e293b">Issue Labeled (autose)</text>
+  <rect x="295" y="114" width="110" height="20" rx="4" fill="#f1f5f9"/>
+  <text x="350" y="128" text-anchor="middle" font-size="10" fill="#475569">issues: [labeled]</text>
+
+  <!-- Trigger Card 2: Issue Comment -->
+  <rect x="440" y="106" width="360" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+  <circle cx="458" cy="124" r="4.5" fill="#2563eb"/>
+  <text x="472" y="128" font-size="12" font-weight="600" fill="#1e293b">Comment Trigger (/autose)</text>
+  <rect x="670" y="114" width="120" height="20" rx="4" fill="#f1f5f9"/>
+  <text x="730" y="128" text-anchor="middle" font-size="10" fill="#475569">issue_comment</text>
+
+  <!-- Trigger Card 3: GitHub Secrets & Environment -->
+  <rect x="824" y="106" width="360" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+  <circle cx="842" cy="124" r="4.5" fill="#64748b"/>
+  <text x="856" y="128" font-size="12" font-weight="600" fill="#1e293b">GitHub Secrets &amp; Context</text>
+  <rect x="1030" y="114" width="144" height="20" rx="4" fill="#f1f5f9"/>
+  <text x="1102" y="128" text-anchor="middle" font-size="10" fill="#475569">GEMINI_API_KEY</text>
+
+  <!-- Trigger bus connecting downward into Stage 1 -->
+  <path d="M 236 142 L 236 158 L 370 158 L 370 216" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 620 142 L 620 158 L 370 158" stroke="#475569" stroke-width="1.5" fill="none"/>
+
+  <!-- ==================== MAIN SECTION CONTAINERS ==================== -->
+  <!-- Left Container: Pipeline Orchestrator -->
+  <rect x="40" y="172" width="630" height="630" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="60" y="197" font-size="11" font-weight="700" fill="#0f172a" letter-spacing="0.5">AUTONOMOUS SDLC PIPELINE (ORCHESTRATOR STATE MACHINE)</text>
+  <rect x="480" y="184" width="175" height="20" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="567" y="198" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Deterministic State Machine</text>
+
+  <!-- Right Container: Reviewer Enclave & Governance -->
+  <rect x="700" y="172" width="500" height="630" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="720" y="197" font-size="11" font-weight="700" fill="#0369a1" letter-spacing="0.5">ISOLATED REVIEWER ENCLAVE &amp; HUMAN GOVERNANCE</text>
+  <rect x="1055" y="184" width="130" height="20" rx="4" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1"/>
+  <text x="1120" y="198" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">Zero-Trust Sandbox</text>
+
+  <!-- ==================== STAGE 1: REQUIREMENTS ==================== -->
+  <g transform="translate(90, 216)">
+    <rect x="0" y="0" width="560" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 554 0 A 6 6 0 0 1 560 6 L 560 24 L 0 24 Z" fill="#f1f5f9"/>
+    <line x1="0" y1="24" x2="560" y2="24" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="17" font-size="11.5" font-weight="700" fill="#1e293b">Stage 1: Requirements Engineering Agent</text>
+    <rect x="410" y="3" width="140" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="480" y="16" text-anchor="middle" font-size="9.5" font-weight="600" fill="#475569">gemini-3.5-flash-lite</text>
+    
+    <!-- Col 1: Role -->
+    <text x="12" y="44" font-size="10" font-weight="600" fill="#334155">Synthesizes Acceptance Criteria</text>
+    <text x="12" y="60" font-size="9.5" fill="#64748b">Functional boundary extraction</text>
+    <text x="12" y="76" font-size="9" fill="#94a3b8">Uncertainty Register triangulation</text>
+    <line x1="180" y1="30" x2="180" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 2: Inputs & Tools -->
+    <text x="192" y="44" font-size="9.5" font-weight="600" fill="#334155">Tools: Issue Parser, Gherkin</text>
+    <text x="192" y="60" font-size="9" fill="#64748b">Input: Issue title, body, author</text>
+    <text x="192" y="76" font-size="9" fill="#94a3b8">Format: Given / When / Then</text>
+    <line x1="365" y1="30" x2="365" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 3: Artifact & Gate -->
+    <text x="377" y="45" font-size="10.5" font-weight="700" fill="#0284c7">Artifact: spec.md</text>
+    <rect x="377" y="54" width="172" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="385" y="69" font-size="9" font-weight="600" fill="#15803d">Gate 1: ACs Testable ✓</text>
+  </g>
+
+  <!-- Down Arrow: Stage 1 -> Stage 2 -->
+  <line x1="370" y1="304" x2="370" y2="336" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== STAGE 2: DESIGN ==================== -->
+  <g transform="translate(90, 336)">
+    <rect x="0" y="0" width="560" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 554 0 A 6 6 0 0 1 560 6 L 560 24 L 0 24 Z" fill="#f1f5f9"/>
+    <line x1="0" y1="24" x2="560" y2="24" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="17" font-size="11.5" font-weight="700" fill="#1e293b">Stage 2: Architectural Design Agent</text>
+    <rect x="425" y="3" width="125" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="487" y="16" text-anchor="middle" font-size="9.5" font-weight="600" fill="#475569">gemini-3.5-flash</text>
+    
+    <!-- Col 1: Role -->
+    <text x="12" y="44" font-size="10" font-weight="600" fill="#334155">Architecture Grounding (ADR-002)</text>
+    <text x="12" y="60" font-size="9.5" fill="#64748b">Enforces TinyDB 3 ADRs &amp; 5 rules</text>
+    <text x="12" y="76" font-size="9" fill="#94a3b8">Prevents circular query-storage deps</text>
+    <line x1="180" y1="30" x2="180" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 2: Inputs & Tools -->
+    <text x="192" y="44" font-size="9.5" font-weight="600" fill="#334155">Context: ARCHITECTURE.md</text>
+    <text x="192" y="60" font-size="9" fill="#64748b">Input: spec.md + AST Symbol Tree</text>
+    <text x="192" y="76" font-size="9" fill="#94a3b8">Specifies target files &amp; signatures</text>
+    <line x1="365" y1="30" x2="365" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 3: Artifact & Gate -->
+    <text x="377" y="45" font-size="10.5" font-weight="700" fill="#0284c7">Artifact: design.md</text>
+    <rect x="377" y="54" width="172" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="385" y="69" font-size="9" font-weight="600" fill="#15803d">Gate 2: Files &amp; APIs Verified ✓</text>
+  </g>
+
+  <!-- Down Arrow: Stage 2 -> Stage 3 -->
+  <line x1="370" y1="424" x2="370" y2="456" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== STAGE 3: IMPLEMENTATION ==================== -->
+  <g transform="translate(90, 456)">
+    <rect x="0" y="0" width="560" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 554 0 A 6 6 0 0 1 560 6 L 560 24 L 0 24 Z" fill="#f1f5f9"/>
+    <line x1="0" y1="24" x2="560" y2="24" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="17" font-size="11.5" font-weight="700" fill="#1e293b">Stage 3: Code Implementation Agent</text>
+    <rect x="425" y="3" width="125" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="487" y="16" text-anchor="middle" font-size="9.5" font-weight="600" fill="#475569">gemini-3.5-flash</text>
+    
+    <!-- Col 1: Role -->
+    <text x="12" y="44" font-size="10" font-weight="600" fill="#334155">Direct Source Code Modification</text>
+    <text x="12" y="60" font-size="9.5" fill="#64748b">Branch: autose/issue-&lt;id&gt;</text>
+    <text x="12" y="76" font-size="9" fill="#94a3b8">Generates minimal unified diff</text>
+    <line x1="180" y1="30" x2="180" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 2: Inputs & Tools -->
+    <text x="192" y="44" font-size="9.5" font-weight="600" fill="#334155">Tools: Edit/Write File, Git</text>
+    <text x="192" y="60" font-size="9" fill="#64748b">Input: design.md + Codebase files</text>
+    <text x="192" y="76" font-size="9" fill="#94a3b8">Syntax: py_compile validator</text>
+    <line x1="365" y1="30" x2="365" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 3: Artifact & Gate -->
+    <text x="377" y="45" font-size="10.5" font-weight="700" fill="#0284c7">Artifact: diff.patch</text>
+    <rect x="377" y="54" width="172" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="385" y="69" font-size="9" font-weight="600" fill="#15803d">Gate 3: Build &amp; Syntax Pass ✓</text>
+  </g>
+
+  <!-- Down Arrow: Stage 3 -> Stage 4 -->
+  <line x1="370" y1="544" x2="370" y2="576" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== STAGE 4: TESTING ==================== -->
+  <g transform="translate(90, 576)">
+    <rect x="0" y="0" width="560" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 554 0 A 6 6 0 0 1 560 6 L 560 24 L 0 24 Z" fill="#f1f5f9"/>
+    <line x1="0" y1="24" x2="560" y2="24" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="17" font-size="11.5" font-weight="700" fill="#1e293b">Stage 4: Testing &amp; Verification Agent</text>
+    <rect x="410" y="3" width="140" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="480" y="16" text-anchor="middle" font-size="9.5" font-weight="600" fill="#475569">gemini-3.5-flash-lite</text>
+    
+    <!-- Col 1: Role -->
+    <text x="12" y="44" font-size="10" font-weight="600" fill="#334155">Test Synthesis &amp; Suite Execution</text>
+    <text x="12" y="60" font-size="9.5" fill="#64748b">228 baseline regression tests</text>
+    <text x="12" y="76" font-size="9" fill="#94a3b8">+ 3 acceptance tests authored</text>
+    <line x1="180" y1="30" x2="180" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 2: Inputs & Tools -->
+    <text x="192" y="44" font-size="9.5" font-weight="600" fill="#334155">Tools: Pytest Execution Runner</text>
+    <text x="192" y="60" font-size="9" fill="#64748b">Input: spec.md + Patched Tree</text>
+    <text x="192" y="76" font-size="9" fill="#94a3b8">Captures trace on assertion fail</text>
+    <line x1="365" y1="30" x2="365" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 3: Artifact & Gate -->
+    <text x="377" y="45" font-size="10.5" font-weight="700" fill="#0284c7">Artifact: test_report.md</text>
+    <rect x="377" y="54" width="172" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="385" y="69" font-size="9" font-weight="600" fill="#15803d">Gate 4: 228 Base + New Pass ✓</text>
+  </g>
+
+  <!-- Left Rail: Test Failure Self-Repair Loop (Stage 4 -> Stage 3) -->
+  <path d="M 90 620 L 62 620 L 62 500 L 90 500" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arrow-warn)"/>
+  <rect x="42" y="540" width="38" height="40" rx="3" fill="#ffffff" stroke="#fde68a" stroke-width="1"/>
+  <text x="61" y="556" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">TEST</text>
+  <text x="61" y="567" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">RETRY</text>
+  <text x="61" y="576" font-size="7.5" font-weight="600" fill="#d97706" text-anchor="middle">(≤ 3)</text>
+
+  <!-- Down Arrow: Stage 4 -> Stage 5 -->
+  <line x1="370" y1="664" x2="370" y2="696" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== STAGE 5: RELEASE ==================== -->
+  <g transform="translate(90, 696)">
+    <rect x="0" y="0" width="560" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 554 0 A 6 6 0 0 1 560 6 L 560 24 L 0 24 Z" fill="#f1f5f9"/>
+    <line x1="0" y1="24" x2="560" y2="24" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="17" font-size="11.5" font-weight="700" fill="#1e293b">Stage 5: Release &amp; PR Management Agent</text>
+    <rect x="405" y="3" width="145" height="18" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="477" y="16" text-anchor="middle" font-size="9.5" font-weight="600" fill="#475569">Actions Runner / gh CLI</text>
+    
+    <!-- Col 1: Role -->
+    <text x="12" y="44" font-size="10" font-weight="600" fill="#334155">Git Branch Push &amp; PR Creation</text>
+    <text x="12" y="60" font-size="9.5" fill="#64748b">Structured changelog formatting</text>
+    <text x="12" y="76" font-size="9" fill="#94a3b8">Links issue, spec, and test runs</text>
+    <line x1="180" y1="30" x2="180" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 2: Inputs & Tools -->
+    <text x="192" y="44" font-size="9.5" font-weight="600" fill="#334155">Tools: git commit, push, gh pr</text>
+    <text x="192" y="60" font-size="9" fill="#64748b">Input: Feature branch &amp; reports</text>
+    <text x="192" y="76" font-size="9" fill="#94a3b8">CI: Triggers Python CI suite</text>
+    <line x1="365" y1="30" x2="365" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Col 3: Artifact & Gate -->
+    <text x="377" y="45" font-size="10.5" font-weight="700" fill="#0284c7">Artifact: pr.md + PR #43</text>
+    <rect x="377" y="54" width="172" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="385" y="69" font-size="9" font-weight="600" fill="#15803d">Gate 5: Branch &amp; PR Live ✓</text>
+  </g>
+
+  <!-- ==================== GUTTER: HANDOFF TO REVIEWER ==================== -->
+  <!-- Clean right-angle upward hand-off wire: Stage 5 -> Central Gutter -> Stage 6 -->
+  <path d="M 650 740 L 675 740 L 675 320 L 720 320" stroke="#0284c7" stroke-width="2" fill="none" marker-end="url(#arrow-accent)"/>
+  <rect x="635" y="610" width="80" height="22" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="675" y="625" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0284c7">PR + DIFF</text>
+
+  <!-- ==================== RIGHT COLUMN: REVIEWER ENCLAVE ==================== -->
+  <!-- Context Isolation Security Banner -->
+  <rect x="720" y="216" width="460" height="48" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
+  <rect x="732" y="224" width="160" height="18" rx="4" fill="#dbeafe"/>
+  <text x="812" y="237" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1e40af">ADR-008 CONTEXT ISOLATION</text>
+  <text x="732" y="254" font-size="9.5" fill="#1e40af">Zero implementer memory · No transcript / chain-of-thought leak · Read-only files</text>
+
+  <!-- Stage 6: Reviewer Agent Card -->
+  <rect x="720" y="274" width="460" height="280" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)"/>
+  <path d="M 720 280 A 6 6 0 0 1 726 274 L 1174 274 A 6 6 0 0 1 1180 280 L 1180 300 L 720 300 Z" fill="#e0f2fe"/>
+  <line x1="720" y1="300" x2="1180" y2="300" stroke="#bae6fd" stroke-width="1"/>
+  <text x="732" y="293" font-size="11.5" font-weight="700" fill="#0369a1">Stage 6: Independent Reviewer Agent (Sandboxed)</text>
+  <rect x="1030" y="278" width="140" height="18" rx="4" fill="#ffffff" stroke="#bae6fd"/>
+  <text x="1100" y="291" text-anchor="middle" font-size="9.5" font-weight="600" fill="#0369a1">gemini-3.5-flash (T=0.0)</text>
+
+  <!-- Reviewer Metadata Spec -->
+  <text x="732" y="320" font-size="10" font-weight="600" fill="#334155">Inputs: Issue Context + Git Diff (origin/main...HEAD) + Read-Only Repo</text>
+  <text x="732" y="336" font-size="9.5" font-weight="600" fill="#dc2626">Security Invariant: Forbidden from git push, branch mutation, or merge</text>
+  <text x="732" y="352" font-size="10" font-weight="700" fill="#0284c7">Delivered Artifact: review.md (Formal Verification Audit)</text>
+  <line x1="732" y1="362" x2="1168" y2="362" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="732" y="377" font-size="9.5" font-weight="700" fill="#475569" letter-spacing="0.5">TYPED VERDICT ROUTING &amp; FEEDBACK GATES</text>
+
+  <!-- Verdict 1: Approach Issue -->
+  <rect x="732" y="386" width="436" height="46" rx="4" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <rect x="742" y="394" width="220" height="18" rx="3" fill="#fef9c3" stroke="#fef08a"/>
+  <text x="748" y="407" font-size="9.5" font-weight="700" fill="#b45309">REQUEST_CHANGES [APPROACH_ISSUE]</text>
+  <text x="744" y="424" font-size="9" fill="#92400e">Violates ARCHITECTURE.md constraints -> Routes to Stage 2 (Max 2 rounds)</text>
+
+  <!-- Verdict 2: Code Issue -->
+  <rect x="732" y="438" width="436" height="46" rx="4" fill="#ffedd5" stroke="#fed7aa" stroke-width="1"/>
+  <rect x="742" y="446" width="195" height="18" rx="3" fill="#fff7ed" stroke="#ffedd5"/>
+  <text x="748" y="459" font-size="9.5" font-weight="700" fill="#c2410c">REQUEST_CHANGES [CODE_ISSUE]</text>
+  <text x="744" y="476" font-size="9" fill="#9a3412">Syntax / logic bug, missing guard -> Routes to Stage 3 (Max 2 rounds)</text>
+
+  <!-- Verdict 3: Approve -->
+  <rect x="732" y="490" width="436" height="46" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="742" y="498" width="80" height="18" rx="3" fill="#f0fdf4" stroke="#dcfce7"/>
+  <text x="748" y="511" font-size="9.5" font-weight="700" fill="#15803d">APPROVE</text>
+  <text x="744" y="528" font-size="9" fill="#166534">100% verified -> Escalates to Human Maintainer for final merge decision</text>
+
+  <!-- Feedback Connector: Approach Issue -> Stage 2 -->
+  <path d="M 732 409 L 688 409 L 688 380 L 650 380" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arrow-warn)"/>
+  <rect x="654" y="396" width="48" height="16" rx="3" fill="#ffffff" stroke="#fde68a"/>
+  <text x="678" y="408" font-size="7.5" font-weight="700" fill="#b45309" text-anchor="middle">S2 LOOP</text>
+
+  <!-- Feedback Connector: Code Issue -> Stage 3 -->
+  <path d="M 732 461 L 688 461 L 688 500 L 650 500" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arrow-warn)"/>
+  <rect x="654" y="475" width="48" height="16" rx="3" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="678" y="487" font-size="7.5" font-weight="700" fill="#c2410c" text-anchor="middle">S3 LOOP</text>
+
+  <!-- Approval Connector: Reviewer -> Human Maintainer -->
+  <path d="M 950 536 L 950 574" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-success)"/>
+  <rect x="885" y="546" width="130" height="18" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1" filter="url(#shadow)"/>
+  <text x="950" y="559" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">APPROVED / ESCALATED</text>
+
+  <!-- ==================== HUMAN MAINTAINER SOVEREIGN GATE ==================== -->
+  <g transform="translate(720, 574)">
+    <rect x="0" y="0" width="460" height="210" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M 0 6 A 6 6 0 0 1 6 0 L 454 0 A 6 6 0 0 1 460 6 L 460 26 L 0 26 Z" fill="#dcfce7"/>
+    <line x1="0" y1="26" x2="460" y2="26" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="12" y="18" font-size="11.5" font-weight="700" fill="#15803d">Human Maintainer Sovereign Gate (Final Authority)</text>
+    <rect x="315" y="4" width="135" height="18" rx="4" fill="#ffffff" stroke="#bbf7d0"/>
+    <text x="382" y="17" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d">Autonomous Merge Banned</text>
+
+    <!-- Governance Details -->
+    <text x="12" y="45" font-size="10" font-weight="600" fill="#1e293b">Complete Audit Package: spec.md, design.md, test_report.md, review.md</text>
+    <text x="12" y="61" font-size="9.5" fill="#475569">Sovereignty Invariant: Automated merge strictly prohibited (ADR-002, ADR-010)</text>
+    <text x="12" y="77" font-size="9.5" fill="#475569">Human maintainer retains exclusive right to approve PR and trigger release</text>
+
+    <!-- Interactive Human Decision Action Box -->
+    <rect x="12" y="88" width="436" height="110" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="24" y="110" font-size="11" font-weight="700" fill="#0f172a">Pull Request #43 · Maintainer Review Console</text>
+    <text x="24" y="128" font-size="10" fill="#64748b">Reviewer Verdict: APPROVED (0 defects) · Test Suite: 228 baseline + 3 new tests passing</text>
+    <text x="24" y="144" font-size="9.5" fill="#64748b">Branch: autose/issue-42 -> main · CI Status: 18/18 Matrix Jobs Passed ✓</text>
+
+    <!-- Buttons -->
+    <rect x="24" y="156" width="165" height="30" rx="4" fill="#15803d"/>
+    <text x="106" y="175" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Merge Pull Request</text>
+
+    <rect x="200" y="156" width="130" height="30" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="265" y="175" text-anchor="middle" font-size="10" font-weight="600" fill="#334155">Request Changes</text>
+
+    <rect x="340" y="156" width="95" height="30" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="387" y="175" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">Close PR</text>
+  </g>
+
+  <!-- ==================== FOOTER LEGEND ==================== -->
+  <rect x="40" y="818" width="1160" height="46" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
   
-  <!-- Trigger Box -->
-  <rect x="60" y="132" width="220" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="75" y="157" font-size="13" font-weight="600" fill="#1e293b">Issue Labeled (autose)</text>
+  <!-- Legend Item 1 -->
+  <line x1="60" y1="841" x2="90" y2="841" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="98" y="845" font-size="10" font-weight="600" fill="#334155">Sequential Stage Hand-off</text>
 
-  <rect x="310" y="132" width="220" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="325" y="157" font-size="13" font-weight="600" fill="#1e293b">Comment Trigger (/autose)</text>
+  <!-- Legend Item 2 -->
+  <line x1="280" y1="841" x2="310" y2="841" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-warn)"/>
+  <text x="318" y="845" font-size="10" font-weight="600" fill="#b45309">Self-Repair / Feedback Loop</text>
 
-  <rect x="560" y="132" width="230" height="40" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="575" y="157" font-size="13" font-weight="600" fill="#166534">Human Maintainer (Merge Gate)</text>
+  <!-- Legend Item 3 -->
+  <line x1="520" y1="841" x2="550" y2="841" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow-accent)"/>
+  <text x="558" y="845" font-size="10" font-weight="600" fill="#0284c7">Sandboxed PR Hand-off</text>
 
-  <rect x="820" y="132" width="220" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="835" y="157" font-size="13" font-weight="600" fill="#334155">GitHub Secrets (GEMINI_KEY)</text>
+  <!-- Legend Item 4 -->
+  <line x1="740" y1="841" x2="770" y2="841" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-success)"/>
+  <text x="778" y="845" font-size="10" font-weight="600" fill="#15803d">Sovereign Merge Escalation</text>
 
-  <!-- Core Pipeline Container -->
-  <rect x="40" y="210" width="670" height="560" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="60" y="235" font-size="13" font-weight="700" fill="#0f172a" text-transform="uppercase" letter-spacing="0.5">Autonomous SDLC Pipeline (Orchestrator State Machine)</text>
-
-  <!-- Stage 1 -->
-  <g transform="translate(60, 255)">
-    <rect x="0" y="0" width="290" height="110" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="290" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#1e293b">Stage 1: Requirements Agent</text>
-    <text x="12" y="48" font-size="11" fill="#475569">Model: Gemini 2.5 Flash</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Tool: Issue Parser &amp; Gherkin Formatter</text>
-    <text x="12" y="92" font-size="11" font-weight="600" fill="#0284c7">Artifact: spec.md (Acceptance Criteria)</text>
-  </g>
-
-  <!-- Stage 2 -->
-  <g transform="translate(390, 255)">
-    <rect x="0" y="0" width="300" height="110" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="300" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#1e293b">Stage 2: Design Agent</text>
-    <text x="12" y="48" font-size="11" fill="#475569">Model: Gemini 2.5 Flash</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Context: ARCHITECTURE.md + AST Index</text>
-    <text x="12" y="92" font-size="11" font-weight="600" fill="#0284c7">Artifact: design.md (Target Files/APIs)</text>
-  </g>
-
-  <!-- Stage 3 -->
-  <g transform="translate(60, 415)">
-    <rect x="0" y="0" width="290" height="110" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="290" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#1e293b">Stage 3: Implementation Agent</text>
-    <text x="12" y="48" font-size="11" fill="#475569">Model: Gemini 2.5 Flash</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Tools: Edit/Write File, Git Branching</text>
-    <text x="12" y="92" font-size="11" font-weight="600" fill="#0284c7">Artifact: diff.patch (Builds Cleanly)</text>
-  </g>
-
-  <!-- Stage 4 -->
-  <g transform="translate(390, 415)">
-    <rect x="0" y="0" width="300" height="110" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="300" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#1e293b">Stage 4: Testing Agent</text>
-    <text x="12" y="48" font-size="11" fill="#475569">Model: Gemini 2.5 Flash</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Tools: Pytest Runner, UV Environment</text>
-    <text x="12" y="92" font-size="11" font-weight="600" fill="#0284c7">Artifact: test_report.md (Old + New Pass)</text>
-  </g>
-
-  <!-- Stage 5 -->
-  <g transform="translate(225, 575)">
-    <rect x="0" y="0" width="300" height="110" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="300" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#1e293b">Stage 5: Release Agent</text>
-    <text x="12" y="48" font-size="11" fill="#475569">Executor: GitHub Actions Runner / gh CLI</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Tools: git push, gh pr create, CI trigger</text>
-    <text x="12" y="92" font-size="11" font-weight="600" fill="#0284c7">Artifact: pr.md + Live Pull Request</text>
-  </g>
-
-  <!-- Connectors in Main Pipeline -->
-  <path d="M 350 310 L 390 310" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <path d="M 540 365 L 540 390 L 205 390 L 205 415" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <path d="M 350 470 L 390 470" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <path d="M 540 525 L 540 550 L 375 550 L 375 575" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-
-  <!-- Test Feedback Loop -->
-  <path d="M 400 440 L 360 440" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow-warn)"/>
-  <text x="375" y="432" font-size="10" font-weight="600" fill="#d97706" text-anchor="middle">retry (≤3)</text>
-
-  <!-- Independent Reviewer Sandbox Boundary -->
-  <rect x="740" y="210" width="320" height="560" rx="8" fill="#fdfefe" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="760" y="235" font-size="13" font-weight="700" fill="#0369a1" text-transform="uppercase" letter-spacing="0.5">Isolated Reviewer Sandbox</text>
-
-  <!-- Security Boundary Tag -->
-  <rect x="760" y="255" width="280" height="50" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-  <text x="772" y="275" font-size="11" font-weight="700" fill="#1e40af">Zero Implementation Memory</text>
-  <text x="772" y="293" font-size="10" fill="#3b82f6">No chat transcript / reasoning / push rights</text>
-
-  <!-- Stage 6 Reviewer Box -->
-  <g transform="translate(760, 325)">
-    <rect x="0" y="0" width="280" height="200" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)"/>
-    <rect x="0" y="0" width="280" height="26" rx="6" fill="#bae6fd"/>
-    <text x="12" y="18" font-size="12" font-weight="700" fill="#0369a1">Stage 6: Reviewer Agent</text>
-    <text x="12" y="48" font-size="11" fill="#0f172a">Model: Gemini 2.5 Pro (Adversarial)</text>
-    <text x="12" y="68" font-size="11" fill="#475569">Allowed Inputs: Issue, Diff, Repo files</text>
-    <text x="12" y="88" font-size="11" fill="#475569">Tools: Read-only files, Pytest execution</text>
-    <text x="12" y="108" font-size="11" fill="#dc2626" font-weight="600">Forbidden: git push / pr merge</text>
-    <text x="12" y="132" font-size="11" font-weight="600" fill="#0284c7">Artifact: review.md</text>
-    <rect x="12" y="145" width="256" height="42" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
-    <text x="20" y="162" font-size="10" font-weight="600" fill="#166534">APPROVE</text>
-    <text x="85" y="162" font-size="10" font-weight="600" fill="#d97706">REQUEST_CHANGES</text>
-    <text x="20" y="178" font-size="9" fill="#64748b">[CODE_ISSUE -> S3 | APPROACH_ISSUE -> S2]</text>
-  </g>
-
-  <!-- Hand-off into Reviewer -->
-  <path d="M 525 630 L 760 425" stroke="#0284c7" stroke-width="2" fill="none" marker-end="url(#arrow-accent)"/>
-  <text x="630" y="525" font-size="10" font-weight="600" fill="#0284c7">PR + Diff Handoff</text>
-
-  <!-- Reviewer Feedback Transitions -->
-  <path d="M 760 460 C 650 490, 420 500, 360 480" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow-warn)"/>
-  <text x="590" y="485" font-size="10" font-weight="600" fill="#d97706">Code Issue (≤2)</text>
-
-  <path d="M 760 360 C 680 340, 520 230, 460 255" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow-warn)"/>
-  <text x="610" y="275" font-size="10" font-weight="600" fill="#d97706">Approach Issue (≤2)</text>
-
-  <!-- Approval to Human Maintainer -->
-  <path d="M 900 525 L 900 680 L 675 680 L 675 172" stroke="#166534" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="890" y="660" font-size="11" font-weight="700" fill="#166534" text-anchor="end">Approved / Max Rounds -> Human Decision</text>
+  <!-- Legend Invariant -->
+  <rect x="970" y="828" width="215" height="26" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="1077" y="845" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">ADR-002: Autonomous Merge Banned</text>
 </svg>
