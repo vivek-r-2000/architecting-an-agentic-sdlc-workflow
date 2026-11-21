@@ -3209,7 +3209,9 @@ wheels = [
 name = "tinydb"
 version = "4.9.0"
 source = { editable = "." }
-dependencies = [
+
+[package.optional-dependencies]
+workflow = [
     { name = "google-genai", version = "2.33.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "google-genai", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "matplotlib", version = "3.10.9", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
@@ -3235,12 +3237,13 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "google-genai", specifier = ">=2.33.0" },
-    { name = "matplotlib", specifier = ">=3.10.9" },
-    { name = "python-docx", specifier = ">=1.2.0" },
-    { name = "pywin32", marker = "sys_platform == 'win32'", specifier = ">=312" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "google-genai", marker = "extra == 'workflow'", specifier = ">=2.33.0" },
+    { name = "matplotlib", marker = "extra == 'workflow'", specifier = ">=3.10.9" },
+    { name = "python-docx", marker = "extra == 'workflow'", specifier = ">=1.2.0" },
+    { name = "pywin32", marker = "sys_platform == 'win32' and extra == 'workflow'", specifier = ">=312" },
+    { name = "pyyaml", marker = "extra == 'workflow'", specifier = ">=6.0.3" },
 ]
+provides-extras = ["workflow"]
 
 [package.metadata.requires-dev]
 dev = [

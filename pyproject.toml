@@ -29,7 +29,10 @@ classifiers = [
     "Operating System :: OS Independent",
     "Typing :: Typed",
 ]
-dependencies = [
+dependencies = []
+
+[project.optional-dependencies]
+workflow = [
     "google-genai>=2.33.0",
     "matplotlib>=3.10.9",
     "python-docx>=1.2.0",
